@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@2.1.3/dist/vue.js"></script>
+    <title>Component</title>
+</head>
+<body>
+    <div id="root">
+        <message title="First Message" body="Body of first message"></message>
+        <message title="Second Message" body="Body of second message"></message>
+    </div>
+
+    <div id="root1">
+        <h1>Event</h1>
+        <event :info='info' @remove='remove'></event>
+    </div>
+    
+    <script src="main.js" />
+</body>
+</html>
