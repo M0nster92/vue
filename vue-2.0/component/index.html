@@ -15,7 +15,7 @@
 
     <div id="root1">
         <h1>Event</h1>
-        <event :info='info' @remove='remove'></event>
+        <event :info='info' :len='info.length' @remove='remove' @insert='insert'></event>
     </div>
     
     <script src="main.js" />
