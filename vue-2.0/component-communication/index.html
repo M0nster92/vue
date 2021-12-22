@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <title>Tabs</title>
+
+    <style>
+        body{
+            padding-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="root" class="container">
+
+        <h1>Parent Child Event</h1>
+        
+        <coupon @applied='onApplied'></coupon>
+        <p v-if="couponApplied">Coupon Applied</p>
+
+        <h1>Siblings Event</h1>
+        <siblings></siblings>
+
+    </div>
+    
+    <script src="https://unpkg.com/vue@2.1.3/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
