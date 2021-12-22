@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="root">
+        <h1>Forms</h1>
+
+        <form>
+            <label>Email:</label>
+            <input placeholder="email" v-model="email">
+            <p>Email: {{email}}</p>
+
+            <label>Job:</label>
+            <select v-model="job">
+                <option></option>
+                <option v-for="value in selectValues" :value="value" >{{value}}</option>
+            </select>
+            <p>Job: {{job}}</p>
+
+            <label>Terms:</label>
+            <input type="checkbox" v-model="terms" />
+            <p>Terms: {{terms}}</p>
+
+            <label>City:</label>
+            <br />
+            <label>Toronto</label>
+            <input type="checkbox" value="Toronto" v-model="city" />
+            <label>BC</label>
+            <input type="checkbox" value="BC" v-model="city" />
+            <label>DC</label>
+            <input type="checkbox" value="DC" v-model="city" />
+            <p>City: {{city}}</p>
+
+        </form>
+        
+    </div>
+
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+
+        const App = {
+            mounted(){
+                console.log('Mounted');
+            },
+            data(){
+                return {
+                    email: '',
+                    job: '',
+                    terms:false,
+                    city:[],
+                    selectValues: [
+                        'Web Developer',
+                        'Backend',
+                        'Frontend'
+                    ]
+                }
+            }
+        }
+
+        
+
+        Vue.createApp(App).mount('#root')
+    </script>
+</body>
+</html>
