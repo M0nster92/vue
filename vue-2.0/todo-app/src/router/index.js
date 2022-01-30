@@ -1,7 +1,8 @@
-import { createRouter, createWebHistory } from "vue-router";
+import Vue from "vue";
+import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-import Jobs from "../views/jobs/Jobs.vue";
-import JobDetails from "../views/jobs/JobDetails.vue";
+
+Vue.use(VueRouter);
 
 const routes = [
   {
@@ -18,20 +19,11 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
-  {
-    path: "/jobs",
-    name: "Jobs",
-    component: Jobs,
-  },
-  {
-    path: "/jobs/:id",
-    name: "JobDetails",
-    component: JobDetails,
-  },
 ];
 
-const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+const router = new VueRouter({
+  mode: "history",
+  base: process.env.BASE_URL,
   routes,
 });
 
